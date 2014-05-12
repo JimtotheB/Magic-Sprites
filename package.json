@@ -22,7 +22,8 @@
     "css-sprite": "^0.7.0-beta3",
     "gulp-if": "^1.1.0",
     "gulp-debug": "^0.3.0",
-    "gulp-connect": "^2.0.5"
+    "gulp-connect": "^2.0.5",
+    "through2": "^0.4.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
