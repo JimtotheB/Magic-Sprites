@@ -1,6 +1,8 @@
 ###Magic Sprites
 ####Build and customize css sprite sheets from a directory of images.
 
+##### Magic Sprites relies on node-canvas, Installation instructions for your system can be found here [Node-Canvas](https://github.com/learnboost/node-canvas/wiki)
+
 ####Basic Workflow
 
 Clone project -> npm install -> gulp build -> gulp watch
