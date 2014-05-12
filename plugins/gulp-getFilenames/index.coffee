@@ -6,13 +6,14 @@ fs = require "fs"
 
 PLUGIN_NAME = "gulp-getFilenames"
 
-Json = path.join process.cwd(), "./test.json"
+
 
 stripFilename = (p)->
   extname = path.extname(p)
   return path.basename(p, extname)
 
-getFilenames = ()->
+getFilenames = (options = fileName: "./data/my-imagedata.json")->
+  Json = path.join process.cwd(), options.fileName
   exists = fs.existsSync Json
 #    throw new PluginError PLUGIN_NAME, "your config file exists, to continue would destroy it."
   if not exists
