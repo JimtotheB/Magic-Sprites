@@ -1,17 +1,28 @@
-###Magic Sprites
+#Magic Sprites
+
 ####Build and customize css sprite sheets from a directory of images.
 
 ##### Magic Sprites relies on node-canvas, Installation instructions for your system can be found here [Node-Canvas](https://github.com/learnboost/node-canvas/wiki)
 
+## Installation 
+
+    $ bower install MagicSprites
+    $ cd bower_components/MagicSprites
+    $ npm install
+
+
 ####Basic Workflow
 
-Clone project -> npm install -> gulp build -> gulp watch
+    $ gulp build #your compiled css will be in ./assets/css/magic.min.css
+    
+    $ gulp watch 
+    # Will launch a preview server at http://localhost:9000. 
+    # It reloads on changes.
+    
 
 This will build a spritesheet and associated css file from simple-Icons ./images/icons_white/48px
 The background-color data for this build can be found at ./data/simple-icons.json
 
-gulp build - compiles your images into a sprite sheet, generates less css files, and finally compiles them to css.
-gulp watch - will launch a preview server available at http://localhost:9000 this is useful if you plan to further edit data.
 
 ####Advanced workflow - building from your own images.
 
