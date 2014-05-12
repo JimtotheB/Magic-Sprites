@@ -1,0 +1,914 @@
+[
+  {
+    "name": "500px",
+    "hex": "444444",
+    "credit": "500px",
+    "className": "a500px"
+  },
+  {
+    "name": "About.me",
+    "hex": "00405D",
+    "credit": "AOL Inc.",
+    "className": "aboutme"
+  },
+  {
+    "name": "AIM",
+    "hex": "F2D523",
+    "credit": "Alex Peattie",
+    "className": "aim"
+  },
+  {
+    "name": "A List Apart",
+    "hex": "222222",
+    "credit": "A List Apart",
+    "className": "alistapart"
+  },
+  {
+    "name": "Amazon",
+    "hex": "FF9900",
+    "credit": "Alex Peattie",
+    "className": "amazon"
+  },
+  {
+    "name": "Amazon Wishlist",
+    "hex": "FF9900",
+    "credit": "Amazon ",
+    "className": "amazonwishlist"
+  },
+  {
+    "name": "Android",
+    "hex": "A4C639",
+    "credit": "Google, Inc",
+    "className": "android"
+  },
+  {
+    "name": "AngelList",
+    "hex": "000000",
+    "credit": "AngelList",
+    "className": "angellist"
+  },
+  {
+    "name": "Aol",
+    "hex": "000000",
+    "credit": "Nathaniel Taintor",
+    "className": "aol"
+  },
+  {
+    "name": "App Dot Net",
+    "hex": "898D90",
+    "credit": "App.net",
+    "className": "appdotnet"
+  },
+  {
+    "name": "Apple",
+    "hex": "B9BFC1",
+    "credit": "Alex Peattie",
+    "className": "apple"
+  },
+  {
+    "name": "Audioboo",
+    "hex": "AE006E",
+    "credit": "Audioboo",
+    "className": "audioboo"
+  },
+  {
+    "name": "AWS",
+    "hex": "FF9900",
+    "credit": "Amazon, Inc.",
+    "className": "aws"
+  },
+  {
+    "name": "Basecamp",
+    "hex": "66AD4E",
+    "credit": "37signals",
+    "className": "basecamp"
+  },
+  {
+    "name": "Bebo",
+    "hex": "EE1010",
+    "credit": "Bebo",
+    "className": "bebo"
+  },
+  {
+    "name": "Behance",
+    "hex": "1769FF",
+    "credit": "Alex Peattie",
+    "className": "behance"
+  },
+  {
+    "name": "Bitbucket",
+    "hex": "205081",
+    "credit": "Atlassian",
+    "className": "bitbucket"
+  },
+  {
+    "name": "Bitly",
+    "hex": "ee6123",
+    "credit": "???",
+    "className": "bitly"
+  },
+  {
+    "name": "Blip",
+    "hex": "FF1919",
+    "credit": "Blip",
+    "className": "blip"
+  },
+  {
+    "name": "Blogger",
+    "hex": "F57D00",
+    "credit": "Google, Inc.",
+    "className": "blogger"
+  },
+  {
+    "name": "Bootstrap",
+    "hex": "0088CC",
+    "credit": "N/A",
+    "className": "bootstrap"
+  },
+  {
+    "name": "Codecademy",
+    "hex": "0088CC",
+    "credit": "Codecademy",
+    "className": "codecademy"
+  },
+  {
+    "name": "Codepen",
+    "hex": "231F20",
+    "credit": "Codepen",
+    "className": "codepen"
+  },
+  {
+    "name": "coderbits",
+    "hex": "F16522",
+    "credit": "coderbits",
+    "className": "coderbits"
+  },
+  {
+    "name": "Coderwall",
+    "hex": "3E8DCC",
+    "credit": "Coderwall",
+    "className": "coderwall"
+  },
+  {
+    "name": "Code School",
+    "hex": "C68044",
+    "credit": "Code School LLC",
+    "className": "codeschool"
+  },
+  {
+    "name": "Conservatives",
+    "hex": "0087DC",
+    "credit": "Conservatives",
+    "className": "conservatives"
+  },
+  {
+    "name": "Coursera",
+    "hex": "3A6D8E",
+    "credit": "Coursera",
+    "className": "coursera"
+  },
+  {
+    "name": "CSS3",
+    "hex": "0092BF",
+    "credit": "W3C",
+    "className": "css3"
+  },
+  {
+    "name": "Delicious",
+    "hex": "3274D1",
+    "credit": "Delicious",
+    "className": "delicious"
+  },
+  {
+    "name": "Designer News",
+    "hex": "1C52A2",
+    "credit": "Layer Vault",
+    "className": "designernews"
+  },
+  {
+    "name": "DeviantART",
+    "hex": "4B5D50",
+    "credit": "???",
+    "className": "deviantart"
+  },
+  {
+    "name": "Digg",
+    "hex": "14589E",
+    "credit": "Alex Peattie",
+    "className": "digg"
+  },
+  {
+    "name": "Disqus",
+    "hex": "2E9FFF",
+    "credit": "Disqus",
+    "className": "disqus"
+  },
+  {
+    "name": "Dribbble",
+    "hex": "EA4C89",
+    "credit": "Dribbble LLC",
+    "className": "dribbble"
+  },
+  {
+    "name": "Dropbox",
+    "hex": "2281CF",
+    "credit": "Dropbox Inc.",
+    "className": "dropbox"
+  },
+  {
+    "name": "Drupal",
+    "hex": "0077C0",
+    "credit": "Drupal",
+    "className": "drupal"
+  },
+  {
+    "name": "Ebay",
+    "hex": "0064D2",
+    "credit": "???",
+    "className": "ebay"
+  },
+  {
+    "name": "Email",
+    "hex": "000000",
+    "credit": "???",
+    "className": "email"
+  },
+  {
+    "name": "Envato",
+    "hex": "528036",
+    "credit": "Envato",
+    "className": "envato"
+  },
+  {
+    "name": "Eventbrite",
+    "hex": "F3844C",
+    "credit": "Eventbrite",
+    "className": "eventbrite"
+  },
+  {
+    "name": "Event Store",
+    "hex": "6BA300",
+    "credit": "Dan Leech",
+    "className": "eventstore"
+  },
+  {
+    "name": "Evernote",
+    "hex": "6BB130",
+    "credit": "Evernote Corporation",
+    "className": "evernote"
+  },
+  {
+    "name": "exfm",
+    "hex": "0097F8",
+    "credit": "Extension Entertainment Inc.",
+    "className": "exfm"
+  },
+  {
+    "name": "Facebook",
+    "hex": "3B5998",
+    "credit": "Facebook, Inc.",
+    "className": "facebook"
+  },
+  {
+    "name": "Flattr",
+    "hex": "F67C1A",
+    "credit": "Flattr",
+    "className": "flattr"
+  },
+  {
+    "name": "Flickr",
+    "hex": "0063DB",
+    "credit": "???",
+    "className": "flickr"
+  },
+  {
+    "name": "Formspring",
+    "hex": "0076C0",
+    "credit": "Formspring",
+    "className": "formspring"
+  },
+  {
+    "name": "Forrst",
+    "hex": "5B9A68",
+    "credit": "Forrst",
+    "className": "forrst"
+  },
+  {
+    "name": "Foursquare",
+    "hex": "2398C9",
+    "credit": "Foursquare",
+    "className": "foursquare"
+  },
+  {
+    "name": "Geeklist",
+    "hex": "8CC63E",
+    "credit": "Geeklist Inc.",
+    "className": "geeklist"
+  },
+  {
+    "name": "GitHub",
+    "hex": "4183C4",
+    "credit": "GitHub, Inc.",
+    "className": "github"
+  },
+  {
+    "name": "Gmail",
+    "hex": "DD4B39",
+    "credit": "???",
+    "className": "gmail"
+  },
+  {
+    "name": "Goodreads",
+    "hex": "5A471B",
+    "credit": "Goodreads Inc",
+    "className": "goodreads"
+  },
+  {
+    "name": "Google",
+    "hex": "245DC1",
+    "credit": "Alex Peattie",
+    "className": "google"
+  },
+  {
+    "name": "Google Plus",
+    "hex": "D14836",
+    "credit": "Sean McCabe, Bold Perspective",
+    "className": "googleplus"
+  },
+  {
+    "name": "GOV.UK",
+    "hex": "231F20",
+    "credit": "Government Digital Service",
+    "className": "govuk"
+  },
+  {
+    "name": "Gravatar",
+    "hex": "1E8CBE",
+    "credit": "Automattic",
+    "className": "gravatar"
+  },
+  {
+    "name": "Grooveshark",
+    "hex": "000000",
+    "credit": "Grooveshark",
+    "className": "grooveshark"
+  },
+  {
+    "name": "Hacker News",
+    "hex": "FF6600",
+    "credit": "Alex Peattie",
+    "className": "hackernews"
+  },
+  {
+    "name": "Heroku",
+    "hex": "6762A6",
+    "credit": "Heroku",
+    "className": "heroku"
+  },
+  {
+    "name": "HTML5",
+    "hex": "F06529",
+    "credit": "W3C",
+    "className": "html5"
+  },
+  {
+    "name": "IMDb",
+    "hex": "F3CE00",
+    "credit": "IMDb.com, Inc.",
+    "className": "imdb"
+  },
+  {
+    "name": "Instagram",
+    "hex": "3F729B",
+    "credit": "Instagram",
+    "className": "instagram"
+  },
+  {
+    "name": "jQuery",
+    "hex": "0867AB",
+    "credit": "jQuery Foundation",
+    "className": "jquery"
+  },
+  {
+    "name": "jQuery UI",
+    "hex": "FEA620",
+    "credit": "jQuery Foundation",
+    "className": "jqueryui"
+  },
+  {
+    "name": "JSDB",
+    "hex": "DA320B",
+    "credit": "JSDB",
+    "className": "jsdb"
+  },
+  {
+    "name": "jsFiddle",
+    "hex": "4679A4",
+    "credit": "jsFiddle",
+    "className": "jsfiddle"
+  },
+  {
+    "name": "JustGiving",
+    "hex": "78256D",
+    "credit": "JustGiving",
+    "className": "justgiving"
+  },
+  {
+    "name": "Khan Academy",
+    "hex": "9DB63B",
+    "credit": "Khan Academy",
+    "className": "khanacademy"
+  },
+  {
+    "name": "Kickstarter",
+    "hex": "87C442",
+    "credit": "Kickstarter, Inc.",
+    "className": "kickstarter"
+  },
+  {
+    "name": "kik",
+    "hex": "87C541",
+    "credit": "kik",
+    "className": "kik"
+  },
+  {
+    "name": "Klout",
+    "hex": "E24A25",
+    "credit": "???",
+    "className": "klout"
+  },
+  {
+    "name": "Labour",
+    "hex": "C41230",
+    "credit": "Labour",
+    "className": "labour"
+  },
+  {
+    "name": "Laravel",
+    "hex": "FB502B",
+    "credit": "Laravel",
+    "className": "laravel"
+  },
+  {
+    "name": "Last.fm",
+    "hex": "D51007",
+    "credit": "Last.fm Ltd",
+    "className": "lastfm"
+  },
+  {
+    "name": "Layer Vault",
+    "hex": "26AE90",
+    "credit": "Layer Vault",
+    "className": "layervault"
+  },
+  {
+    "name": "Letterboxd",
+    "hex": "2C3641",
+    "credit": "Letterboxd",
+    "className": "letterboxd"
+  },
+  {
+    "name": "Liberal Democrats",
+    "hex": "F7B135",
+    "credit": "Liberal Democrats",
+    "className": "liberaldemocrats"
+  },
+  {
+    "name": "LinkedIn",
+    "hex": "007FB1",
+    "credit": "Alex Peattie",
+    "className": "linkedin"
+  },
+  {
+    "name": "LiveJournal",
+    "hex": "195397",
+    "credit": "LiveJournal, Inc",
+    "className": "livejournal"
+  },
+  {
+    "name": "Media Temple",
+    "hex": "000000",
+    "credit": "Media Temple",
+    "className": "mediatemple"
+  },
+  {
+    "name": "Mendeley",
+    "hex": "B61F2F",
+    "credit": "Mendeley",
+    "className": "mendeley"
+  },
+  {
+    "name": "Microformats",
+    "hex": "8CC319",
+    "credit": "Microformats",
+    "className": "microformats"
+  },
+  {
+    "name": "Microsoft Account",
+    "hex": "3E73B4",
+    "credit": "Nathaniel Taintor",
+    "className": "microsoftaccount"
+  },
+  {
+    "name": "Modernizr",
+    "hex": "D81A76",
+    "credit": "Modernizr",
+    "className": "modernizr"
+  },
+  {
+    "name": "MySpace",
+    "hex": "008DDE",
+    "credit": "???",
+    "className": "myspace"
+  },
+  {
+    "name": "MySQL",
+    "hex": "007597",
+    "credit": "MySQL",
+    "className": "mysql"
+  },
+  {
+    "name": "National Rail",
+    "hex": "003366",
+    "credit": "National Rail",
+    "className": "nationalrail"
+  },
+  {
+    "name": "Netlog",
+    "hex": "000000",
+    "credit": "Nathaniel Taintor",
+    "className": "netlog"
+  },
+  {
+    "name": "Newsvine",
+    "hex": "075B2F",
+    "credit": "Newsvine, Inc",
+    "className": "newsvine"
+  },
+  {
+    "name": "Office",
+    "hex": "EB3C00",
+    "credit": "???",
+    "className": "office"
+  },
+  {
+    "name": "Orkut",
+    "hex": "ED2590",
+    "credit": "Google, Inc.",
+    "className": "orkut"
+  },
+  {
+    "name": "Outlook",
+    "hex": "0072C6",
+    "credit": "???",
+    "className": "outlook"
+  },
+  {
+    "name": "Path",
+    "hex": "E41F11",
+    "credit": "Alex Peattie",
+    "className": "path"
+  },
+  {
+    "name": "Paypal",
+    "hex": "1F356F",
+    "credit": "Nathaniel Taintor",
+    "className": "paypal"
+  },
+  {
+    "name": "PHP",
+    "hex": "6181B6",
+    "credit": "The PHP Group",
+    "className": "php"
+  },
+  {
+    "name": "Picasa",
+    "hex": "4B5D5F",
+    "credit": "Google, Inc.",
+    "className": "picasa"
+  },
+  {
+    "name": "Pinboard",
+    "hex": "0000FF",
+    "credit": "Alex Peattie",
+    "className": "pinboard"
+  },
+  {
+    "name": "Pingup",
+    "hex": "00B1AB",
+    "credit": "Pingup",
+    "className": "pingup"
+  },
+  {
+    "name": "Pinterest",
+    "hex": "CB2027",
+    "credit": "Pinterest, Inc.",
+    "className": "pinterest"
+  },
+  {
+    "name": "Pocket",
+    "hex": "EF4056",
+    "credit": "Pocket",
+    "className": "pocket"
+  },
+  {
+    "name": "Posterous -defunct",
+    "hex": "EF4056",
+    "credit": "Pocket",
+    "className": "posterous"
+  },
+  {
+    "name": "Proto.io",
+    "hex": "40C8F4",
+    "credit": "Proto.io",
+    "className": "protoio"
+  },
+  {
+    "name": "Quora",
+    "hex": "A82400",
+    "credit": "Alex Peattie",
+    "className": "quora"
+  },
+  {
+    "name": "Rails",
+    "hex": "A62C39",
+    "credit": "???",
+    "className": "rails"
+  },
+  {
+    "name": "Rdio",
+    "hex": "006ED2",
+    "credit": "Rdio",
+    "className": "rdio"
+  },
+  {
+    "name": "Readability",
+    "hex": "870000",
+    "credit": "Readability",
+    "className": "readability"
+  },
+  {
+    "name": "Readmill",
+    "hex": "052336",
+    "credit": "Readmill.com",
+    "className": "readmill"
+  },
+  {
+    "name": "Reddit",
+    "hex": "FF4500",
+    "credit": "???",
+    "className": "reddit"
+  },
+  {
+    "name": "RSS",
+    "hex": "FF8300",
+    "credit": "Alex Peattie",
+    "className": "rss"
+  },
+  {
+    "name": "Salesforce",
+    "hex": "333333",
+    "credit": "Salesforce.com",
+    "className": "salesforce"
+  },
+  {
+    "name": "Simple icons",
+    "hex": "000000",
+    "credit": "Simpleicons.org",
+    "className": "simpleicons"
+  },
+  {
+    "name": "Sina Weibo",
+    "hex": "E6162D",
+    "credit": "???",
+    "className": "sinaweibo"
+  },
+  {
+    "name": "SkyDrive",
+    "hex": "094AB1",
+    "credit": "???",
+    "className": "skydrive"
+  },
+  {
+    "name": "Skype",
+    "hex": "00AFF0",
+    "credit": "Alex Peattie",
+    "className": "skype"
+  },
+  {
+    "name": "SlideShare",
+    "hex": "009999",
+    "credit": "SlideShare Inc",
+    "className": "slideshare"
+  },
+  {
+    "name": "Smashing Magazine",
+    "hex": "E95C33",
+    "credit": "Smashing Magazine",
+    "className": "smashingmagazine"
+  },
+  {
+    "name": "SoundCloud",
+    "hex": "FF6600",
+    "credit": "SoundCloud Ltd",
+    "className": "soundcloud"
+  },
+  {
+    "name": "Spotify",
+    "hex": "80B719",
+    "credit": "Alex Peattie",
+    "className": "spotify"
+  },
+  {
+    "name": "Squarespace",
+    "hex": "000000",
+    "credit": "Squarespace",
+    "className": "squarespace"
+  },
+  {
+    "name": "Stack Exchange",
+    "hex": "1F5196",
+    "credit": "Stack Exchange, Inc",
+    "className": "stackexchange"
+  },
+  {
+    "name": "Stack Overflow",
+    "hex": "F47920",
+    "credit": "Stack Exchange, Inc",
+    "className": "stackoverflow"
+  },
+  {
+    "name": "Steam",
+    "hex": "000000",
+    "credit": "Valve Corporation",
+    "className": "steam"
+  },
+  {
+    "name": "StumbleUpon",
+    "hex": "EB4924",
+    "credit": "???",
+    "className": "stumbleupon"
+  },
+  {
+    "name": "Super User",
+    "hex": "2DABE2",
+    "credit": "Stack Exchange, Inc",
+    "className": "superuser"
+  },
+  {
+    "name": "TED",
+    "hex": "FF2B06",
+    "credit": "TED",
+    "className": "ted"
+  },
+  {
+    "name": "Trakt",
+    "hex": "222222",
+    "credit": "trakt",
+    "className": "trakt"
+  },
+  {
+    "name": "Treehouse",
+    "hex": "7FA24C",
+    "credit": "Treehouse Island, Inc",
+    "className": "treehouse"
+  },
+  {
+    "name": "Trip Advisor",
+    "hex": "589442",
+    "credit": "???",
+    "className": "tripadvisor"
+  },
+  {
+    "name": "Tumblr",
+    "hex": "2C4762",
+    "credit": "Tumblr, Inc.",
+    "className": "tumblr"
+  },
+  {
+    "name": "Twitch",
+    "hex": "6441A5",
+    "credit": "Justin.tv Inc.",
+    "className": "twitch"
+  },
+  {
+    "name": "Twitter",
+    "hex": "00ACED",
+    "credit": "Twitter, Inc.",
+    "className": "twitter"
+  },
+  {
+    "name": "TYPO3",
+    "hex": "FF8700",
+    "credit": "TYPO3",
+    "className": "typo3"
+  },
+  {
+    "name": "VeriSign",
+    "hex": "FFC10C",
+    "credit": "VeriSign, Inc.",
+    "className": "verisign"
+  },
+  {
+    "name": "Viadeo",
+    "hex": "F4982B",
+    "credit": "Viadeo",
+    "className": "viadeo"
+  },
+  {
+    "name": "Vimeo",
+    "hex": "44BBFF",
+    "credit": "Vimeo",
+    "className": "vimeo"
+  },
+  {
+    "name": "Vine",
+    "hex": "00A47A",
+    "credit": "Vine",
+    "className": "vine"
+  },
+  {
+    "name": "Visual Studio",
+    "hex": "68217A",
+    "credit": "???",
+    "className": "visualstudio"
+  },
+  {
+    "name": "VK",
+    "hex": "45668E",
+    "credit": "Nathaniel Taintor",
+    "className": "vk"
+  },
+  {
+    "name": "VZ Netzwerke",
+    "hex": "EE0000",
+    "credit": "Nathaniel Taintor",
+    "className": "vzn"
+  },
+  {
+    "name": "W3C",
+    "hex": "0066B0",
+    "credit": "W3C",
+    "className": "w3c"
+  },
+  {
+    "name": "WhatsApp",
+    "hex": "64D448",
+    "credit": "WhatsApp Inc",
+    "className": "whatsapp"
+  },
+  {
+    "name": "Wikipedia",
+    "hex": "000000",
+    "credit": "Wikipedia",
+    "className": "wikipedia"
+  },
+  {
+    "name": "Windows",
+    "hex": "00BDF6",
+    "credit": "???",
+    "className": "windows"
+  },
+  {
+    "name": "WordPress",
+    "hex": "21759B",
+    "credit": "WordPress Foundation",
+    "className": "wordpress"
+  },
+  {
+    "name": "Xbox",
+    "hex": "107C10",
+    "credit": "Microsoft",
+    "className": "xbox"
+  },
+  {
+    "name": "Xing",
+    "hex": "006567",
+    "credit": "Alex Peattie",
+    "className": "xing"
+  },
+  {
+    "name": "Yahoo!",
+    "hex": "731A8B",
+    "credit": "Alex Peattie",
+    "className": "yahoo"
+  },
+  {
+    "name": "Yelp",
+    "hex": "C93C27",
+    "credit": "???",
+    "className": "yelp"
+  },
+  {
+    "name": "YouTube",
+    "hex": "CD332D",
+    "credit": "YouTube, LLC",
+    "className": "youtube"
+  },
+  {
+    "name": "Zerply",
+    "hex": "9DBC7A",
+    "credit": "Alex Peattie",
+    "className": "zerply"
+  }
+]

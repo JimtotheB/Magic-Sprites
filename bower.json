@@ -1,0 +1,22 @@
+{
+  "name": "magicSprites",
+  "version": "0.0.0",
+  "homepage": "https://github.com/PaperElectron/Magic-Spritescxn",
+  "description": "Builds CSS spritesheets and corresponding CSS from a directory of images",
+  "keywords": [
+    "CSS",
+    "sprites",
+    "gulp"
+  ],
+  "authors": [
+    "Jim Bulkowski"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,12 @@
+.main
+  ul
+    each val in icons
+      li
+        .iconHolder
+          div(class="icon #{val.className}")
+          p service:&nbsp;
+            span= val.name
+          p class:&nbsp;
+            span= val.className
+          p hex:&nbsp;#
+            span= val.hex

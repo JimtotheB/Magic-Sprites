@@ -1,0 +1,16 @@
+{
+  "name": "gulp-buildicons",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jim Bulkowski",
+  "license": "MIT",
+  "dependencies": {
+    "gulp-util": "^2.2.14",
+    "lodash": "^2.4.1",
+    "through2": "^0.4.1"
+  }
+}

@@ -1,0 +1,5 @@
+{
+    "iconImagePath": "./images/icons_white/32px/*.png",
+    "iconDataPath": "./simple-icons.json",
+    "cssFileName": "magic"
+}
