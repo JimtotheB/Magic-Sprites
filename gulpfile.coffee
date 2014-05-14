@@ -7,6 +7,8 @@ plumber = require "gulp-plumber"
 rename = require "gulp-rename"
 gulpif = require "gulp-if"
 debug = require "gulp-debug"
+runSequence = require "run-sequence"
+through = require "through2"
 
 # Css tools
 sprite = require("css-sprite").stream
@@ -20,20 +22,20 @@ uglify = require "gulp-uglify"
 
 # Html tools
 
-
 # Livereload server
 connect = require "gulp-connect"
 
 #Project specific Plugins
-
+fileLogger = require "./plugins/fileLogger"
 buildIcons = require "./plugins/gulp-buildIcons"
-buildData = require "./plugins/gulp-getFilenames"
+buildData = require "./plugins/gulp-buildFileData"
 
+fs = require "fs"
+path = require "path"
 # Outside config
-config = require("./config.json")
+config = require("configurizer").getVariables(false)
 #Build variables
 iconImagePath = config.iconImagePath
-
 
 
 src =
@@ -50,13 +52,19 @@ dest =
   images: "./assets/images"
   html: "./"
 
-gulp.task "buildSpriteData", ->
-  gulp.src(iconImagePath)
+
+gulp.task "buildImageData", (cb)->
+  gulp.src("./data/")
   .pipe plumber()
-  .pipe buildData()
+  .pipe buildData(outputFile: config.iconDataPath, inputFile: config.iconImagePath, iconSplit: config.iconSplitOnChar)
+#  .pipe debug( verbose: true)
+  .pipe gulp.dest(config.iconDataPath)
+
+  cb()
+
 
 gulp.task "buildSprites", (cb)->
-  gulp.src(iconImagePath)
+  gulp.src("#{iconImagePath}**")
   .pipe plumber()
   .pipe sprite
 #    name: "sprite.png"
@@ -65,31 +73,43 @@ gulp.task "buildSprites", (cb)->
     cssPath: dest.images
     processor: "less"
   .pipe gulpif("*.png", gulp.dest(dest.images))
-  .pipe gulpif("*.less",buildIcons(dataFile: config.iconDataPath, fileName: "#{config.cssFileName}.less"))
+  .pipe gulpif("*.less", buildIcons(dataFile: config.iconDataPath, outPutFile: "#{config.cssFileName}.less"))
   .pipe gulp.dest("./build/less")
-
-  cb()
-
-
-gulp.task "buildCss", ->
-  gulp.src( src.less )
-  .pipe plumber()
   .pipe less()
-#  .pipe rename("#{config.cssFileName}.css")
-#  .pipe gulp.dest( dest.css )
+  .pipe rename("#{config.cssFileName}.css")
+  .pipe gulp.dest( dest.css )
   .pipe minifyCss()
   .pipe rename("#{config.cssFileName}.min.css")
   .pipe gulp.dest( dest.css )
 
+  cb()
+
+
+gulp.task "buildCss", (cb)->
+  gulp.src( src.less )
+  .pipe plumber()
+  .pipe less()
+  .pipe rename("#{config.cssFileName}.css")
+  .pipe gulp.dest( dest.css )
+  .pipe minifyCss()
+  .pipe rename("#{config.cssFileName}.min.css")
+  .pipe gulp.dest( dest.css )
+
+  cb()
+
 gulp.task "buildHtml", (cb)->
-  icons = require config.iconDataPath
-  locals = icons: icons, cssFile: config.cssFileName
+  dataFile = path.join process.cwd(), config.iconDataPath
+  icons = JSON.parse( fs.readFileSync(dataFile, "utf8") )
+  cssFile = "/assets/css/#{config.cssFileName}.css?v=#{Date.now()}"
+  console.log cssFile
+  locals = icons: icons, cssFile: cssFile
   gulp.src(src.jadeIndex)
   .pipe plumber()
   .pipe jade
     locals: locals
     pretty: true
   .pipe gulp.dest(dest.html)
+  .pipe connect.reload()
 
   cb()
 
@@ -114,30 +134,44 @@ gulp.task "server", ->
     port: 9000
     host: "0.0.0.0"
 
-gulp.task "reloadServer", ["buildHtml"],->
-  gulp.src src.html
-  .pipe connect.reload()
 
+gulp.task "reloadServer", ["buildHtml"]
 
-gulp.task "runWatch", ["server"],->
-  css =   ["buildCss"]
-  js =    ["buildJs", "minifyJs"]
-  reload = ["reloadServer"]
-  rebuild = ["buildCss"]
-  gulp.watch("./build/**/*.less", css )
-  gulp.watch(src.jade, reload)
-  gulp.watch(src.coffee, js)
-#  gulp.watch("./assets/css/*.css", reload)
-
-  gulp.watch("./*.json", rebuild)
-  gulp.watch("./assets/css/**/*.css", reload)
 
 
 gulp.task "js", ["buildJs", "minifyJs"]
 gulp.task "css", ["buildCss"]
 gulp.task "html", ["buildHtml"]
-gulp.task "watch", ["runWatch"]
 gulp.task "init", ["buildSpriteData"]
-gulp.task "build", ["buildSprites"]
 
+
+gulp.task "watchImages", (cb)->
+  setTimeout (->
+    watch({glob: "#{iconImagePath}**", read: false, emitOnGlob: false}, ["buildImageData"])
+  ), 200
+  cb()
+
+gulp.task "watchFileData", (cb)->
+  setTimeout (->
+    watch(glob: "data/**/*", emitOnGlob: false, ["buildSprites"])
+  ), 200
+  cb()
+
+gulp.task "watchCSS", (cb)->
+  setTimeout (->
+    watch(glob: ["assets/css/**"], emitOnGlob: false, ["reloadServer"])
+  ), 200
+  cb()
+
+gulp.task "build", ["buildImageData"]
+
+
+gulp.task "watch", (cb)->
+  runSequence(
+    "watchImages","watchFileData", "server", "watchCSS", cb
+  )
+
+  setTimeout (->
+    gulp.start("buildImageData")
+  ), 500
 

@@ -91,8 +91,7 @@
       };
     }
     stream = through.obj(function(file, enc, cb) {
-      var allBuffers, array, colors, newFile;
-      console.log(file.path);
+      var allBuffers, array, colors, dataFile, newFile;
       if (!options.dataFile) {
         this.push(file);
         cb();
@@ -104,12 +103,13 @@
       }
       if (file.isBuffer()) {
         array = file.contents.toString().split("\n");
-        colors = require(path.join(process.cwd(), options.dataFile));
+        dataFile = path.join(process.cwd(), options.dataFile);
+        colors = JSON.parse(fs.readFileSync(dataFile, "utf8"));
         allBuffers = createBuffers(array, colors);
         newFile = new gutil.File({
           base: "./",
           cwd: "./",
-          path: "./" + options.fileName,
+          path: "" + options.outPutFile,
           contents: Buffer.concat(allBuffers)
         });
         this.push(newFile);

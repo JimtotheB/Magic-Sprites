@@ -62,7 +62,6 @@ createBuffers = (array, colors)->
 buildIcon = (options = {dataFile: false, fileName: "magic.less"})->
 #  prefixText = new Buffer(prefixText)
   stream = through.obj (file, enc, cb)->
-    console.log file.path
     if not options.dataFile
       @push file
       cb()
@@ -72,13 +71,14 @@ buildIcon = (options = {dataFile: false, fileName: "magic.less"})->
       cb()
     if file.isBuffer()
       array = file.contents.toString().split("\n")
-      colors = require path.join(process.cwd(),options.dataFile)
+      dataFile = path.join(process.cwd(),options.dataFile)
+      colors = JSON.parse( fs.readFileSync(dataFile, "utf8") )
       allBuffers = createBuffers(array, colors)
 
       newFile = new gutil.File
         base: "./"
         cwd: "./"
-        path: "./#{options.fileName}"
+        path: "#{options.outPutFile}"
         contents: Buffer.concat(allBuffers)
       @push(newFile)
     else
