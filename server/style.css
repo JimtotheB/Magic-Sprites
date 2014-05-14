@@ -20,7 +20,7 @@ body {
 
 ol, ul {
     list-style: none;
-    width: 90%;
+    width: 99%;
     margin: auto;
 }
 
@@ -47,6 +47,7 @@ table {
 li {
     float: left;
     width: 20%;
+    display: block;
 }
 
 li p {
@@ -54,9 +55,32 @@ li p {
 }
 
 .main {
-    border: 1px solid red;
-    width: 80%;
-    margin: 0 auto;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    width: auto;
+    display: block;
+    padding: 5px;
+}
+
+.header h1 {
+    font-size: 2rem;
+}
+
+.header a {
+    color: ghostwhite;
+}
+.header a:hover {
+    color: #78ab28;
+}
+
+.iconData {
+    border-top: 1px solid GrayText;
+    padding: 3px;
+    margin-top: 3px;
 }
 
 .iconHolder {
@@ -68,10 +92,19 @@ li p {
     border: 1px solid GrayText;
     margin: 1%;
     color: white;
+    width: auto;
     display: block;
 }
 
 .iconHolder:hover {
     background-color: white;
     color: black;
+}
+
+.clearFix {
+    clear: both;
+}
+
+.icon {
+    margin: auto;
 }

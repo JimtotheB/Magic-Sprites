@@ -25,7 +25,8 @@
       if (split) {
         className = className.split(split)[0];
       }
-      data = data = {
+      data = {
+        name: "",
         className: className,
         hex: ""
       };

@@ -53,17 +53,16 @@ dest =
   html: "./"
 
 
-gulp.task "buildImageData", (cb)->
+gulp.task "buildImageData", ->
   gulp.src("./data/")
   .pipe plumber()
   .pipe buildData(outputFile: config.iconDataPath, inputFile: config.iconImagePath, iconSplit: config.iconSplitOnChar)
 #  .pipe debug( verbose: true)
   .pipe gulp.dest(config.iconDataPath)
 
-  cb()
 
 
-gulp.task "buildSprites", (cb)->
+gulp.task "buildSprites", ->
   gulp.src("#{iconImagePath}**")
   .pipe plumber()
   .pipe sprite
@@ -82,10 +81,9 @@ gulp.task "buildSprites", (cb)->
   .pipe rename("#{config.cssFileName}.min.css")
   .pipe gulp.dest( dest.css )
 
-  cb()
 
 
-gulp.task "buildCss", (cb)->
+gulp.task "buildCss", ->
   gulp.src( src.less )
   .pipe plumber()
   .pipe less()
@@ -95,9 +93,8 @@ gulp.task "buildCss", (cb)->
   .pipe rename("#{config.cssFileName}.min.css")
   .pipe gulp.dest( dest.css )
 
-  cb()
 
-gulp.task "buildHtml", (cb)->
+gulp.task "buildHtml", ->
   dataFile = path.join process.cwd(), config.iconDataPath
   icons = JSON.parse( fs.readFileSync(dataFile, "utf8") )
   cssFile = "/assets/css/#{config.cssFileName}.css?v=#{Date.now()}"
@@ -111,7 +108,6 @@ gulp.task "buildHtml", (cb)->
   .pipe gulp.dest(dest.html)
   .pipe connect.reload()
 
-  cb()
 
 gulp.task "buildJs", ->
   gulp.src( src.coffee )
@@ -163,7 +159,11 @@ gulp.task "watchCSS", (cb)->
   ), 200
   cb()
 
-gulp.task "build", ["buildImageData"]
+gulp.task "build", (cb)->
+  log = ->
+    gutil.log gutil.colors.green("[Magic Sprites] Your CSS files are available in \n
+    ./assets/css/#{config.cssFileName}.css and ./assets/css/#{config.cssFileName}.min.css")
+  runSequence("buildImageData", "buildSprites", log)
 
 
 gulp.task "watch", (cb)->

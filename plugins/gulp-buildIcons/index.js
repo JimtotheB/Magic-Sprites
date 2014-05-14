@@ -77,8 +77,7 @@
         }
       }
     }
-    console.log(buffers.length);
-    console.log(count);
+    gutil.log(gutil.colors.green("[" + PLUGIN_NAME + "] built " + count + " Icons."));
     return buffers;
   };
 

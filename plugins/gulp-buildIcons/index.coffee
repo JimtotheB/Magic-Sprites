@@ -55,8 +55,7 @@ createBuffers = (array, colors)->
         append = buildClass("icon.#{c}", s, colors[key].hex)
         buffers.push new Buffer("#{append}\n\n")
         count++
-  console.log buffers.length
-  console.log count
+  gutil.log gutil.colors.green("[#{PLUGIN_NAME}] built #{count} Icons.")
   return buffers
 
 buildIcon = (options = {dataFile: false, fileName: "magic.less"})->

@@ -19,7 +19,7 @@ buildImageData = (files, existingData, split)->
       className = className.split(split)[0]
 
     #default output
-    data = data = className: className, hex: ""
+    data = name: "", className: className, hex: ""
 
     #If we have existing data, loop through it and extract.
     if existingData?
