@@ -3,7 +3,7 @@
 ####Build and customize css sprite sheets from a directory of images.
 
 ##### Magic Sprites relies on node-canvas, Installation instructions for your system can be found here [Node-Canvas](https://github.com/learnboost/node-canvas/wiki)
-##### Magic Sprites contains all of @danleech (Simple-Icons)[https://github.com/danleech/simple-icons] using the 48px versions by default.
+##### Magic Sprites contains all of @danleech [Simple-Icons](tps://github.com/danleech/simple-icons) using the 48px versions by default.
 
 ## Installation
 
@@ -26,7 +26,7 @@ The background-color data for this build can be found at ./data/simple-icons.jso
 
 
 ####Advanced workflow - building from your own images.
-
+#####See note at bottom about developing inside bower_components (ie: don't)
 Put images in ./images/my-images -> edit ./config.yaml -> gulp build / gulp watch
 
 ./config.yaml needs to contain
@@ -38,19 +38,24 @@ Put images in ./images/my-images -> edit ./config.yaml -> gulp build / gulp watc
     iconDataPath: "data/simple-icons.json"
 
     iconSplitOnChar: "-"
-
+    
+    outPutImageDirectory: "assets/images/"
+    
+    cssOutputDirectory: "assets/css/"
+    
     cssFileName: "magic"
 
-iconImagePath - Relative path to your images. No beginning /
-iconDataPath - Relative path to the image data file. (this will be generated for you with "gulp build")
-iconSplitOnChar - this is only needed for files appended with -32, -64, -some-junk, it will remove everything after the "-" when it
-    generates classnames. Set to "iconSplitOnChar: false" without quotes if your images do not include this feature.
-cssFileName - The name of the final css file to be output.
+* iconImagePath - Path to your images, relative to projectRoot. No beginning /
+* iconDataPath - Relative path to the image data file. (this will be generated for you with "gulp build")
+* iconSplitOnChar - this is only needed for files appended with -32, -64, -some-junk, it will remove everything after the "-" when it
+    generates classnames. Set to "iconSplitOnChar: false" without quotes if your images do not have annotations.
+* outPutImageDirectory - By default Magic Sprites encodes the png spritesheet as Base64 and includes it inside the resulting CSS file. This saves a request against your server. Changing this setting does nothing, without changing a setting in gulpfile.coffee
+* cssOutputDirectory - Where do you want the CSS file to be output, relative to projectRoot.
+* cssFileName - The name of the final css file to be output.
 
-gulp build - Reads the list of image files, outputting the filenames to ./data/my-imagedata.json
 
 If you have transparent background images, and wish to assign a css color to them, simply add the hex color code (with or without the #)
-to the "hex": field in ./my-imagedata.json.
+to the "hex": field in my-imagedata.json.
 
 #### Preview server
 
@@ -58,10 +63,10 @@ to the "hex": field in ./my-imagedata.json.
 
 Fires up an express server bound to 0.0.0.0:9000 (http://localhost:9000 or http://internal.server:9000 if you are like me and work on a VM)
 
-Css will be rebuilt on addition of images and changes to ./data/my-imagedata.json, and will be auto-refreshed on your browser.
+Css will be rebuilt on addition of images and changes to ./data/my-imagedata.json (or wherever they are set to), and will be auto-refreshed on your browser.
 
 
-#A note on Bower
+#A note on Bower and bower_components
 
 For the sake of development, all of the built files stay relative to the bower directory. This is probably not good practise,
 if you value your data. In a real installation you most likely want to use paths outside the MagicSprites directory.
@@ -76,7 +81,9 @@ if you value your data. In a real installation you most likely want to use paths
     iconDataPath: "data/simple-icons.json"
 
     iconSplitOnChar: "-"
-
+    
+    outPutImageDirectory: "assets/images/"
+    
     cssOutputDirectory: "assets/css/"
 
     cssFileName: "magic"
