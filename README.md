@@ -39,7 +39,7 @@ Put images in ./images/my-images -> edit ./config.yaml -> gulp build / gulp watc
 
     iconSplitOnChar: "-"
     
-    outPutImageDirectory: "assets/images/"
+    outputImageDirectory: "assets/images/"
     
     cssOutputDirectory: "assets/css/"
     
