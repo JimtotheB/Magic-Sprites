@@ -102,7 +102,7 @@
       }
       if (file.isBuffer()) {
         array = file.contents.toString().split("\n");
-        dataFile = path.join(process.cwd(), options.imageDataFile);
+        dataFile = options.imageDataFile;
         colors = JSON.parse(fs.readFileSync(dataFile, "utf8"));
         allBuffers = createBuffers(array, colors);
         newFile = new gutil.File({

@@ -54,7 +54,7 @@ dest =
   Path Variables
 ###
 RootDir = path.normalize(config.projectRoot)
-IconImagePath = path.join(RootDir, config.iconImagePath)
+IconImagePath = path.join(RootDir, "#{config.iconImagePath}/")
 IconDataFile = path.join(RootDir, config.iconDataPath)
 IconDataPath = path.dirname(IconDataFile)
 CssImagePath = path.join(RootDir, config.outPutImageDirectory)
@@ -65,14 +65,13 @@ console.log CssOutputPath
 
 gulp.task "buildImageData", ->
   gulp.src(IconDataPath)
-#  .pipe plumber()
+  .pipe plumber()
   .pipe buildData(imageDataFile: IconDataFile, imagePath: IconImagePath, iconSplit: config.iconSplitOnChar)
   .pipe gulp.dest(IconDataFile)
 
 
-
 gulp.task "buildSprites", ->
-  gulp.src("#{iconImagePath}**")
+  gulp.src("#{IconImagePath}**")
   .pipe plumber()
   .pipe sprite
 #    name: "sprite.png"
@@ -86,7 +85,6 @@ gulp.task "buildSprites", ->
   .pipe less()
   .pipe rename("#{config.cssFileName}.css")
   .pipe gulp.dest( CssOutputPath )
-  .pipe gulp.dest("./server/")
   .pipe minifyCss()
   .pipe rename("#{config.cssFileName}.min.css")
   .pipe gulp.dest( CssOutputPath )
@@ -95,8 +93,7 @@ gulp.task "buildSprites", ->
 
 gulp.task "buildHtml", ->
   icons = JSON.parse( fs.readFileSync(IconDataFile, "utf8") )
-  cssFile = "#{config.cssFileName}.css?v=#{Date.now()}"
-  console.log cssFile
+  cssFile = "/#{config.cssFileName}.css?v=#{Date.now()}"
   locals = icons: icons, cssFile: cssFile
   gulp.src(src.jadeIndex)
   .pipe plumber()
@@ -123,17 +120,24 @@ gulp.task "minifyJs",["buildJs"], ->
 
 gulp.task "server", ->
   connect.server
-    root: "./"
+    root: ["./", CssOutputPath]
     livereload: true
     port: 9000
     host: "0.0.0.0"
+    middleware: (connect, opt)->
+      [
+#        (req, res, next)->
+#          console.log req.url
+#          next()
+      ]
 
 
 gulp.task "reloadServer", ["buildHtml"]
 
 gulp.task "watchImages", (cb)->
+  console.log "#{IconImagePath}**"
   setTimeout (->
-    watch({glob: "#{iconImagePath}**", read: false, emitOnGlob: false}, ["buildImageData"])
+    watch({glob: "#{IconImagePath}**", read: false, emitOnGlob: false}, ["buildImageData"])
   ), 200
   cb()
 
@@ -168,11 +172,11 @@ gulp.task "test", (cb)->
 
   p = path.join(config.projectRoot, config.cssOutputDirectory)
   fs.readdir p, (err, files)->
-    console.log files
-    console.log RootDir
+#    console.log files
+#    console.log RootDir
     console.log IconImagePath
-    console.log IconDataPath
-    console.log IconDataFile
-    console.log CssOutputPath
-    console.log CssOutputFile
+#    console.log IconDataPath
+#    console.log IconDataFile
+#    console.log CssOutputPath
+#    console.log CssOutputFile
     cb()
