@@ -57,7 +57,7 @@ RootDir = path.normalize(config.projectRoot)
 IconImagePath = path.join(RootDir, "#{config.iconImagePath}/")
 IconDataFile = path.join(RootDir, config.iconDataPath)
 IconDataPath = path.dirname(IconDataFile)
-CssImagePath = path.join(RootDir, config.outPutImageDirectory)
+CssImagePath = path.join(RootDir, config.outputImageDirectory)
 CssOutputPath = path.join(RootDir, config.cssOutputDirectory)
 CssOutputFile = "#{CssOutputPath}#{config.cssFileName}"
 

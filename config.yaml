@@ -20,7 +20,7 @@
 
   #This is ONLY if you arent generating a base64 image for your sprite sheet, as is default.
   #I highly suggest leaving this alone.
-  outPutImageDirectory: "assets/images/"
+  outputImageDirectory: "assets/images/"
 
   cssOutputDirectory: "assets/css/"
 
