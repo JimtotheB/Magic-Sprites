@@ -1,6 +1,6 @@
 {
   "name": "magicSprites",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/PaperElectron/Magic-Sprites",
   "description": "Builds CSS spritesheets and corresponding CSS from a directory of images",
   "keywords": [
