@@ -58,7 +58,7 @@ createBuffers = (array, colors)->
   gutil.log gutil.colors.green("[#{PLUGIN_NAME}] built #{count} Icons.")
   return buffers
 
-buildIcon = (options = {imageDataFile: false, fileName: "magic.less"})->
+buildIcon = (options = {imageDataFile: false, outPutFile: "magic.less"})->
 #  prefixText = new Buffer(prefixText)
   stream = through.obj (file, enc, cb)->
     if not options.imageDataFile
@@ -77,7 +77,7 @@ buildIcon = (options = {imageDataFile: false, fileName: "magic.less"})->
       newFile = new gutil.File
         base: "./"
         cwd: "./"
-        path: ""
+        path: options.outPutFile
         contents: Buffer.concat(allBuffers)
       @push(newFile)
     else

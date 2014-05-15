@@ -10,13 +10,17 @@
 
   #Path and filename to output your image data, classnames, etc.
   #this file will be auto-generated.
-  iconDataPath: "data/simple-icons.json"
+  iconDataPath: "data/derp.json"
 
   #This will remove everything after the character provided.
   #Ie: the simple-icon files that come bundled all end with -16, -32, -64
   #If your images do not need to be trimmed, or you dont want them trimmed,
   #set this to "iconSplitOnChar: false" without quotes.
   iconSplitOnChar: "-"
+
+  #This is ONLY if you arent generating a base64 image for your sprite sheet, as is default.
+  #I highly suggest leaving this alone.
+  outPutImageDirectory: "assets/images/"
 
   cssOutputDirectory: "assets/css/"
 

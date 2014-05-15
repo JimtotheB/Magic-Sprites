@@ -86,7 +86,7 @@
     if (options == null) {
       options = {
         imageDataFile: false,
-        fileName: "magic.less"
+        outPutFile: "magic.less"
       };
     }
     stream = through.obj(function(file, enc, cb) {
@@ -108,7 +108,7 @@
         newFile = new gutil.File({
           base: "./",
           cwd: "./",
-          path: "",
+          path: options.outPutFile,
           contents: Buffer.concat(allBuffers)
         });
         this.push(newFile);

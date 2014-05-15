@@ -57,7 +57,7 @@
     }
     stream = through.obj(function(file, enc, cb) {
       var images;
-      images = path.join(process.cwd(), options.imagePath);
+      images = options.imagePath;
       return fs.exists(options.imageDataFile, (function(_this) {
         return function(exists) {
           var existingData;

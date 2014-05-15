@@ -38,11 +38,10 @@ getFilenames = (options)->
     throw new PluginError PLUGIN_NAME, gutil.colors.red(err)
 
   stream = through.obj (file, enc, cb)->
-    images = path.join process.cwd(), options.imagePath
+    images = options.imagePath
 
     #If The data file exists we need to pull it in and pass it to the parser.
     fs.exists options.imageDataFile, (exists)=>
-
       #read in the existing data file
       existingData = JSON.parse( fs.readFileSync(options.imageDataFile, "utf8") ) if exists
       fs.readdir images, (err, files)=>
