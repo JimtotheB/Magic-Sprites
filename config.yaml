@@ -1,7 +1,11 @@
 ---
 #This is a YAML file, use spaces NEVER TABS, or it will fail miserably.
 
-  #Path to your image folder, relative to this file.
+  #set this to the absolute path of your project if you want MagicIcons to work
+  #with files outside its own directory. (which I strongly suggest)
+  projectRoot: "./"
+
+  #Path to your image folder, relative to projectRoot.
   iconImagePath: "images/icons_white/48px/"
 
   #Path and filename to output your image data, classnames, etc.
@@ -13,6 +17,8 @@
   #If your images do not need to be trimmed, or you dont want them trimmed,
   #set this to "iconSplitOnChar: false" without quotes.
   iconSplitOnChar: "-"
+
+  cssOutputDirectory: "assets/css/"
 
   #CSS filename that will ultimately be written to ./assets/css
   cssFileName: "magic"

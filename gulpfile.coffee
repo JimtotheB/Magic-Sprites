@@ -48,17 +48,24 @@ src =
 
 dest =
   js: "./assets/js/"
-  css: "./assets/css/"
-  images: "./assets/images"
   html: "./"
 
+###
+  Path Variables
+###
+RootDir = path.normalize(config.projectRoot)
+IconImagePath = path.join(RootDir, config.iconImagePath)
+IconDataFile = path.join(RootDir, config.iconDataPath)
+IconDataPath = path.dirname(IconDataFile)
+CssOutputPath = path.join(RootDir, config.cssOutputDirectory)
+CssOutputFile = "#{CssOutputPath}#{config.cssFileName}"
 
 gulp.task "buildImageData", ->
-  gulp.src("./data/")
+  gulp.src(IconDataPath)
   .pipe plumber()
-  .pipe buildData(outputFile: config.iconDataPath, inputFile: config.iconImagePath, iconSplit: config.iconSplitOnChar)
+  .pipe buildData(imageDataFile: IconDataFile, imagePath: IconImagePath, iconSplit: config.iconSplitOnChar)
 #  .pipe debug( verbose: true)
-  .pipe gulp.dest(config.iconDataPath)
+  .pipe gulp.dest(IconDataPath)
 
 
 
@@ -72,14 +79,14 @@ gulp.task "buildSprites", ->
     cssPath: dest.images
     processor: "less"
   .pipe gulpif("*.png", gulp.dest(dest.images))
-  .pipe gulpif("*.less", buildIcons(dataFile: config.iconDataPath, outPutFile: "#{config.cssFileName}.less"))
+  .pipe gulpif("*.less", buildIcons(imageDataFile: IconDataFile, outPutFile: "#{CssOutputFile}.less"))
   .pipe gulp.dest("./build/less")
   .pipe less()
-  .pipe rename("#{config.cssFileName}.css")
-  .pipe gulp.dest( dest.css )
+  .pipe rename("#{CssOutputFile}.css")
+  .pipe gulp.dest( CssOutputPath )
   .pipe minifyCss()
-  .pipe rename("#{config.cssFileName}.min.css")
-  .pipe gulp.dest( dest.css )
+  .pipe rename("#{CssOutputFile}.min.css")
+  .pipe gulp.dest( CssOutputPath )
 
 
 
@@ -95,9 +102,8 @@ gulp.task "buildCss", ->
 
 
 gulp.task "buildHtml", ->
-  dataFile = path.join process.cwd(), config.iconDataPath
-  icons = JSON.parse( fs.readFileSync(dataFile, "utf8") )
-  cssFile = "/assets/css/#{config.cssFileName}.css?v=#{Date.now()}"
+  icons = JSON.parse( fs.readFileSync(IconDataFile, "utf8") )
+  cssFile = "#{CssOutputFile}.css?v=#{Date.now()}"
   console.log cssFile
   locals = icons: icons, cssFile: cssFile
   gulp.src(src.jadeIndex)
@@ -133,14 +139,6 @@ gulp.task "server", ->
 
 gulp.task "reloadServer", ["buildHtml"]
 
-
-
-gulp.task "js", ["buildJs", "minifyJs"]
-gulp.task "css", ["buildCss"]
-gulp.task "html", ["buildHtml"]
-gulp.task "init", ["buildSpriteData"]
-
-
 gulp.task "watchImages", (cb)->
   setTimeout (->
     watch({glob: "#{iconImagePath}**", read: false, emitOnGlob: false}, ["buildImageData"])
@@ -149,20 +147,20 @@ gulp.task "watchImages", (cb)->
 
 gulp.task "watchFileData", (cb)->
   setTimeout (->
-    watch(glob: "data/**/*", emitOnGlob: false, ["buildSprites"])
+    watch(glob: "#{IconDataPath}/**/*", emitOnGlob: false, ["buildSprites"])
   ), 200
   cb()
 
 gulp.task "watchCSS", (cb)->
   setTimeout (->
-    watch(glob: ["assets/css/**"], emitOnGlob: false, ["reloadServer"])
+    watch(glob: ["#{CssOutputPath}**"], emitOnGlob: false, ["reloadServer"])
   ), 200
   cb()
 
 gulp.task "build", (cb)->
   log = ->
     gutil.log gutil.colors.green("[Magic Sprites] Your CSS files are available in \n
-    ./assets/css/#{config.cssFileName}.css and ./assets/css/#{config.cssFileName}.min.css")
+    #{CssOutputFile}.css and #{CssOutputFile}.min.css")
   runSequence("buildImageData", "buildSprites", log)
 
 
@@ -175,3 +173,15 @@ gulp.task "watch", (cb)->
     gulp.start("buildImageData")
   ), 500
 
+gulp.task "test", (cb)->
+
+  p = path.join(config.projectRoot, config.cssOutputDirectory)
+  fs.readdir p, (err, files)->
+    console.log files
+    console.log RootDir
+    console.log IconImagePath
+    console.log IconDataPath
+    console.log IconDataFile
+    console.log CssOutputPath
+    console.log CssOutputFile
+    cb()

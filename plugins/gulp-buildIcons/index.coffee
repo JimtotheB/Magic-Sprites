@@ -58,10 +58,10 @@ createBuffers = (array, colors)->
   gutil.log gutil.colors.green("[#{PLUGIN_NAME}] built #{count} Icons.")
   return buffers
 
-buildIcon = (options = {dataFile: false, fileName: "magic.less"})->
+buildIcon = (options = {imageDataFile: false, fileName: "magic.less"})->
 #  prefixText = new Buffer(prefixText)
   stream = through.obj (file, enc, cb)->
-    if not options.dataFile
+    if not options.imageDataFile
       @push file
       cb()
       throw new PluginError(PLUGIN_NAME, "Options cannot be empty")
@@ -70,14 +70,14 @@ buildIcon = (options = {dataFile: false, fileName: "magic.less"})->
       cb()
     if file.isBuffer()
       array = file.contents.toString().split("\n")
-      dataFile = path.join(process.cwd(),options.dataFile)
+      dataFile = path.join(process.cwd(),options.imageDataFile)
       colors = JSON.parse( fs.readFileSync(dataFile, "utf8") )
       allBuffers = createBuffers(array, colors)
 
       newFile = new gutil.File
         base: "./"
         cwd: "./"
-        path: "#{options.outPutFile}"
+        path: ""
         contents: Buffer.concat(allBuffers)
       @push(newFile)
     else

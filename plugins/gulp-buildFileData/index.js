@@ -57,12 +57,12 @@
     }
     stream = through.obj(function(file, enc, cb) {
       var images;
-      images = path.join(process.cwd(), options.inputFile);
-      return fs.exists(options.outputFile, (function(_this) {
+      images = path.join(process.cwd(), options.imagePath);
+      return fs.exists(options.imageDataFile, (function(_this) {
         return function(exists) {
           var existingData;
           if (exists) {
-            existingData = JSON.parse(fs.readFileSync(options.outputFile, "utf8"));
+            existingData = JSON.parse(fs.readFileSync(options.imageDataFile, "utf8"));
           }
           return fs.readdir(images, function(err, files) {
             var dataObject, newFile;

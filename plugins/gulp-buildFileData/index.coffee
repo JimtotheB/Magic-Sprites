@@ -38,13 +38,13 @@ getFilenames = (options)->
     throw new PluginError PLUGIN_NAME, gutil.colors.red(err)
 
   stream = through.obj (file, enc, cb)->
-    images = path.join process.cwd(), options.inputFile
+    images = path.join process.cwd(), options.imagePath
 
     #If The data file exists we need to pull it in and pass it to the parser.
-    fs.exists options.outputFile, (exists)=>
+    fs.exists options.imageDataFile, (exists)=>
 
       #read in the existing data file
-      existingData = JSON.parse( fs.readFileSync(options.outputFile, "utf8") ) if exists
+      existingData = JSON.parse( fs.readFileSync(options.imageDataFile, "utf8") ) if exists
       fs.readdir images, (err, files)=>
         #Compare and parse data, then create a new vinyl object
         dataObject = buildImageData(files, existingData, options.iconSplit)

@@ -85,13 +85,13 @@
     var stream;
     if (options == null) {
       options = {
-        dataFile: false,
+        imageDataFile: false,
         fileName: "magic.less"
       };
     }
     stream = through.obj(function(file, enc, cb) {
       var allBuffers, array, colors, dataFile, newFile;
-      if (!options.dataFile) {
+      if (!options.imageDataFile) {
         this.push(file);
         cb();
         throw new PluginError(PLUGIN_NAME, "Options cannot be empty");
@@ -102,13 +102,13 @@
       }
       if (file.isBuffer()) {
         array = file.contents.toString().split("\n");
-        dataFile = path.join(process.cwd(), options.dataFile);
+        dataFile = path.join(process.cwd(), options.imageDataFile);
         colors = JSON.parse(fs.readFileSync(dataFile, "utf8"));
         allBuffers = createBuffers(array, colors);
         newFile = new gutil.File({
           base: "./",
           cwd: "./",
-          path: "" + options.outPutFile,
+          path: "",
           contents: Buffer.concat(allBuffers)
         });
         this.push(newFile);
